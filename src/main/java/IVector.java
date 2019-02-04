@@ -5,4 +5,5 @@ public interface IVector {
     boolean equals(IVector v);
     double getXcoordinate();
     double getYcoordinate();
+    double getLength();
 }

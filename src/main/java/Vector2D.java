@@ -1,4 +1,4 @@
-public class Vector2D implements IVector {
+public class Vector2D implements IVector,Comparable {
     private double xCoordinate;
     private double yCoordinate;
 
@@ -40,4 +40,20 @@ public class Vector2D implements IVector {
         return yCoordinate;
     }
 
+    public double getLength() {
+        return Math.sqrt(xCoordinate*xCoordinate + yCoordinate*yCoordinate);
+    }
+
+    public int compareTo(Object o) {
+        IVector v = (IVector) o;
+        if (v.getXcoordinate() == this.getXcoordinate() && v.getYcoordinate() == this.getYcoordinate()){
+         return 0;
+        }
+        else if(v.getLength() > this.getLength()){
+            return -1;
+        }
+        else{
+            return 1;
+        }
+    }
 }
